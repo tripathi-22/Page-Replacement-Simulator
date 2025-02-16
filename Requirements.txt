@@ -1,0 +1,8 @@
+# Efficient Page Replacement Simulator Dependencies
+
+# Matplotlib is used for plotting graphs within the Tkinter GUI.
+matplotlib>=3.0.0
+
+# Note:
+# Tkinter is included with most standard Python installations and does not need to be installed via pip.
+# Ensure you are using Python 3.6 or later for best compatibility.
