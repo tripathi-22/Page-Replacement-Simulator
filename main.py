@@ -53,56 +53,7 @@ def simulate_fifo(page_references, num_frames):
 
     return simulation_steps
 
-def simulate_lru(page_references, num_frames):
-    """
-    Simulate the LRU (Least Recently Used) page replacement algorithm.
-    
-    Parameters:
-        page_references (list of int): The sequence of page requests.
-        num_frames (int): Number of available memory frames.
-    
-    Returns:
-        simulation_steps (list of dict): A record of each simulation step.
-          Each dict contains:
-            - 'step': Simulation step number.
-            - 'page': Current page being processed.
-            - 'frames': A copy of the current frames list.
-            - 'fault': True if a page fault occurred.
-            - 'fault_count': Cumulative page faults so far.
-    """
-    frames = []
-    simulation_steps = []
-    page_faults = 0
-    usage_order = []  # This list keeps track of pages in the order of usage
 
-    for i, page in enumerate(page_references):
-        fault = False
-        if page in frames:
-            # Update usage order: remove and append to mark as most recently used
-            usage_order.remove(page)
-            usage_order.append(page)
-        else:
-            page_faults += 1
-            fault = True
-            if len(frames) < num_frames:
-                frames.append(page)
-                usage_order.append(page)
-            else:
-                # Remove the least recently used page (the first in usage_order)
-                lru_page = usage_order.pop(0)
-                frames.remove(lru_page)
-                frames.append(page)
-                usage_order.append(page)
-        # Record the state for this simulation step
-        simulation_steps.append({
-            "step": i + 1,
-            "page": page,
-            "frames": frames.copy(),
-            "fault": fault,
-            "fault_count": page_faults
-        })
-
-    return simulation_steps
 
 # ==============================
 # GUI & Visualization Module
