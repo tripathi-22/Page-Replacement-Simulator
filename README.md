@@ -1,65 +1,94 @@
-# Efficient Page Replacement Algorithm Simulator
+# Page Replacement Algorithm Simulator
 
-## Overview
-The **Efficient Page Replacement Algorithm Simulator** is a graphical tool designed to help users test and compare different page replacement algorithms, including:
-- FIFO (First-In-First-Out)
-- LRU (Least Recently Used)
-- Optimal (OPT)
-- Clock Algorithm
+A GUI application to simulate and visualize different page replacement algorithms using Python and Tkinter.
 
-The simulator provides visualizations and performance metrics to analyze the efficiency of each algorithm in handling page faults.
+![Demo Screenshot](https://via.placeholder.com/800x400.png?text=Page+Replacement+Simulator+Demo)
+
+## Table of Contents
+- [Project Description](#project-description)
+- [Features](#features)
+- [Algorithms Implemented](#algorithms-implemented)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Description
+This application provides a graphical interface to simulate and analyze different page replacement algorithms used in operating systems' memory management. Users can input custom page sequences, select algorithms, and visualize the results through tables and graphs.
 
 ## Features
-- **User-Friendly GUI**: Built using Tkinter for easy interaction.
-- **Multiple Algorithms**: Supports FIFO, LRU, Optimal, and Clock page replacement techniques.
-- **Real-Time Visualization**: Uses Matplotlib to display page replacement operations step by step.
-- **Performance Analysis**: Displays the number of page faults for each algorithm.
-- **Custom Input**: Users can enter their own reference string and frame size.
+- Interactive GUI with input validation
+- Support for four page replacement algorithms:
+  - FIFO (First-In First-Out)
+  - LRU (Least Recently Used)
+  - Optimal
+  - Clock (Second Chance)
+- Real-time results display with color-coded page faults
+- Performance graph visualization
+- Algorithm comparison chart
+- Frame state visualization for each step
+- File I/O operations (save/load results)
+- Tooltips for better usability
+
+## Algorithms Implemented
+1. **FIFO**: Removes the oldest page in memory
+2. **LRU**: Removes the least recently used page
+3. **Optimal**: Removes the page that won't be used for the longest time (future-aware)
+4. **Clock**: Uses a circular buffer with reference bits
 
 ## Installation
-To use this simulator, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tripathi-22/page-replacement-simulator.git
 
-### Prerequisites
-Ensure you have Python installed (preferably Python 3.7+). Also, install the required dependencies:
-```bash
-pip install tkinter matplotlib
-```
-
-### Clone the Repository
-```bash
-git clone https://github.com/tripathi-22/Efficient-Page-Replacement-Simulator.git
-cd Efficient-Page-Replacement-Simulator
-```
+2. Install required dependencies:
+pip install matplotlib
 
 ## Usage
-Run the script to start the simulator:
-```bash
-python main.py
-```
 
-### Steps to Use
-1. Enter the number of frames and a reference string.
-2. Select a page replacement algorithm.
-3. Click "Run Simulation" to visualize the process.
-4. View results including page faults and step-by-step execution.
+1. Run the application:
+python page_replacement.py
 
-## Example
-Sample reference string: `7, 0, 1, 2, 0, 3, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1`
-Frame size: `3`
+2. Input parameters:
+a. Page Sequence (comma-separated numbers)
+b. Number of frames
+c. Select algorithm from dropdown
 
-The simulator will display step-by-step page replacements and compute the total number of page faults.
+3. Use buttons to:
+a. Run simulation
+b. Compare all algorithms
+c. Show performance graph
+d. Load/Save sequences
+e. Clear inputs
 
-## Contribution
-Feel free to contribute by submitting pull requests or reporting issues. To contribute:
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m 'Added new feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request.
+## Examples
 
-## Contact
-For questions or suggestions, contact:
-- **Sameer Tripathi**
-- **Email: tripathisam2204@gmail.com**
-- **GitHub: [tripathi-22](https://github.com/tripathi-22)**
+Sample Input:
+Page Sequence: 1,2,3,4,1,2,5,1,2,3,4,5
+Number of Frames: 3
+Selected Algorithm: LRU
 
+Expected Output:
+Step-by-step table of page replacements
+
+Page fault statistics
+
+Cumulative fault graph
+
+Visual representation of frame states
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+## Acknowledgements
+
+1. Python Tkinter for GUI development
+2. Matplotlib for graph visualization
+3. Standard page replacement algorithm references
