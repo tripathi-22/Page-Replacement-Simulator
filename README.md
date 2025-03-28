@@ -2,8 +2,6 @@
 
 A GUI application to simulate and visualize different page replacement algorithms using Python and Tkinter.
 
-![Demo Screenshot](https://via.placeholder.com/800x400.png?text=Page+Replacement+Simulator+Demo)
-
 ## Table of Contents
 - [Project Description](#project-description)
 - [Features](#features)
